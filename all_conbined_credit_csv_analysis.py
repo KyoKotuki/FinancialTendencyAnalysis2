@@ -80,7 +80,8 @@ class Yearly_Credit_Analysis:
         #print(f"monthly_data = \n{monthly_data}") # ← Pandas Seriesというデータ型.
 
         # 単位をK単位に変換する.
-        monthly_data_transformed = monthly_data.apply(lambda x: x / 1000)
+        # 10K(万)単位に変更
+        monthly_data_transformed = monthly_data.apply(lambda x: x / 10000)
 
         # 日付形式を変更する.今回は%mにする. 年は2023に固定されているので表示する必要はない.
         monthly_data_transformed.index = monthly_data_transformed.index.strftime('%m')
